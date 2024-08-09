@@ -54,7 +54,7 @@
     background-color: lightgray;
 }
 
-.InputLocation--Wrapper {
+.Input--Wrapper {
     display: flex;
     flex-direction: column;
 
@@ -62,7 +62,7 @@
     height: 100%;
 }
 
-.InputLocation--Circle {
+.Input--Circle {
     display: flex;
     width: 22px;
     height: 22px;
@@ -81,7 +81,7 @@
     font-weight: 600;
 }
 
-.InputLocation--TextBox {
+.Input--TextBox {
     display: flex;
     flex-direction: column;
 
@@ -194,4 +194,30 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
+}
+
+.InputStyle--StyleBox--Collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin : 20px auto auto 20px;
+
+    gap : 16px 12px;
+}
+
+.InputStyle--StyleBox {
+    display: flex;
+    width: 45%;
+    height: 50px;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+    border: 1px solid var(--G8, #BBB);
+
+    color: var(--G4, #606060);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 700;
 }

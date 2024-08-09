@@ -24,9 +24,9 @@ const InputLocation = (props) => {
   };
 
   return (
-    <div className="InputLocation--Wrapper">
-      <div className="InputLocation--Circle">1</div>
-      <div className="InputLocation--TextBox">
+    <div className="Input--Wrapper">
+      <div className="Input--Circle">1</div>
+      <div className="Input--TextBox">
         <div>내가 사는 곳의</div>
         <div>
           <span style={{ color: "#046649", fontWeight: "700" }}>
