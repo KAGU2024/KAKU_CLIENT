@@ -71,6 +71,7 @@ const LoginSocialIcons = () => {
             src={option.svg}
             alt={option.name}
             onClick={() => handleLogin(option.name, option.authUrl)}
+            style={{width: '61px', height: '61px'}}
           />
         ))}
       </div>

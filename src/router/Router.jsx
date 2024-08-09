@@ -3,6 +3,7 @@ import MainPage from "../pages/MainPage";
 import Layout from "../components/layout/Layout";
 import MyPage from "../pages/MyPage";
 import LoginPage from "../pages/LoginPage";
+import InfoPage from "../pages/InfoPage";
 
 /**
  *
@@ -13,23 +14,27 @@ import LoginPage from "../pages/LoginPage";
  */
 
 const Router = createBrowserRouter([
-    {
-        path: '/login',
-        element: <LoginPage />
-    },
-    {
-        element: <Layout />,
-        children: [
-        {
-            path: "/",
-            element: <MainPage />,
-        },
-        {
-            path: "/my",
-            element: <MyPage />,
-        },
-        ],
-    },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/info",
+    element: <InfoPage />,
+  },
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <MainPage />,
+      },
+      {
+        path: "/my",
+        element: <MyPage />,
+      },
+    ],
+  },
 ]);
 
 export default Router;

@@ -1,24 +1,38 @@
-import React from 'react';
-import '../styles/pages/LoginPage.scss';
-import LoginTextBox from '../components/Login/LoginTextBox';
-import LoginFormBox from '../components/Login/LoginFormBox';
-import LoginHrBox from '../components/Login/LoginHrBox';
-import LoginSocialIcons from '../components/Login/LoginSocialIcons';
-import LoginBottomTextBox from '../components/Login/LoginBottomTextBox';
-
-
+import React, { useEffect, useState } from "react";
+import "../styles/pages/LoginPage.scss";
+import LoginSocialIcons from "../components/Login/LoginSocialIcons";
+import LoginBottomTextBox from "../components/Login/LoginBottomTextBox";
+import SplashPage from "./SplashPage";
+import LoginTextBox from "../components/Login/LoginTextBox";
 
 const LoginPage = () => {
-    
-    return (
-      <div className="Login--Wrapper">
-        <LoginTextBox />
-        <LoginFormBox />
-        <LoginHrBox />
-        <LoginSocialIcons />
-        <LoginBottomTextBox />
-      </div>
-    );
+  const [isSplash, setIsSplash] = useState(true);
+
+  useEffect(() => {
+    // Check if the splash screen has been shown before
+    if (localStorage.getItem("isSplash") === "true") {
+      setIsSplash(false);
+    }
+  }, []);
+
+  const handleSplashFinish = () => {
+    localStorage.setItem("isSplash", "true");
+    setIsSplash(false);
+  };
+
+  return (
+    <>
+      {isSplash ? (
+        <SplashPage onFinish={handleSplashFinish} />
+      ) : (
+        <div className="Login--Wrapper">
+          <LoginTextBox />
+          <LoginSocialIcons />
+          <LoginBottomTextBox />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default LoginPage;
